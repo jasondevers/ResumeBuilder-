@@ -1,0 +1,216 @@
+\documentclass[10]{article}
+\usepackage[utf8]{inputenc}
+\renewcommand{\familydefault}{\rmdefault}
+\usepackage[top = .25in, bottom = .25in,left = .35in, right = .35in]{geometry}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+\usepackage{enumitem}
+\usepackage{changepage}
+\usepackage{xifthen}
+\usepackage{fontawesome5}
+\usepackage{fontawesome}
+
+\pagenumbering{gobble}
+
+\newcommand{\setup}{\normalsize}
+\newcommand{\comment}[1]{}
+
+% able to up to 5 things in contact space
+\newcommand{\createheader}[6]{\begin{center}
+    {\LARGE #1} \\[1mm]
+    {#2}
+    {#3}
+    {#4}
+    {#5}
+    {#6}
+    \end{center}
+    \vspace{-5mm}}
+
+\newcommand{\createsection}[1]{
+        \vspace{1.75mm}
+        {\scshape\large\raggedright #1} \hfill \vspace{.15 cm}
+        \hrule \vspace{.3cm}
+    }
+
+\newenvironment{entry}[4]
+{\vspace{-1mm}\textbf{#1}, \emph{#2}\hfill{\ifthenelse{\equal{#4}{}}{#3}{#3 - #4}}
+\vspace{-5pt}
+% Started as leftmargin=4em, rightmargin=12em
+\begin{itemize}[noitemsep,leftmargin=3em, rightmargin=9em,label=\raisebox{0.25ex}{\tiny$\bullet$}]}
+{\end{itemize}\vspace{-1mm}}
+
+\newenvironment{entrynobullets}[2]
+{\vspace{-1mm}\textbf{#1}: {#2}}
+% Started as leftmargin=4em, rightmargin=12em
+{\vspace{1mm}}
+
+
+\newenvironment{emptyentry}
+{\vspace{-1mm}
+\vspace{-5pt}
+% Started as leftmargin=4em, rightmargin=12em
+\begin{itemize}[noitemsep,leftmargin=3em, rightmargin=9em,label=\raisebox{0.25ex}{\tiny$\bullet$}]}
+{\end{itemize}\vspace{-1mm}}
+
+\newenvironment{entryflush}[4]
+{\vspace{-1mm}\textbf{#1}, \emph{#2}\hfill{\ifthenelse{\equal{#4}{}}{#3}{#3 - #4}}
+\vspace{-5pt}
+\begin{itemize}[noitemsep,leftmargin=4em, rightmargin=3px,label=\raisebox{0.25ex}{\tiny$\bullet$}]}
+{\end{itemize}\vspace{-1mm}}
+
+\newcommand{\entryme}[4]{\textbf{#1}, \emph{#2}\hfill{\ifthenelse{\equal{#4}{}}{#3}{#3 - #4}}}
+
+\newenvironment{mylist}
+{\begin{tabular}{rp{13cm}}}
+{\end{tabular}}
+
+\setlength{\tabcolsep}{12pt}
+
+\begin{document}
+
+\setup
+
+\createheader
+{Name}
+{\faIcon{envelope} Email}{\faIcon{phone-square-alt} Phone Number}
+{\faIcon{linkedin}\href{<LinkedIn Link>}{Linkedin}}
+{\faIcon{github}\href{<GitHub Link>}{ GitHub}}
+{\faLock   Clearance}
+\vspace{1.5mm}
+\createsection{Education}
+
+        % University of Maryland
+         \begin{entryflush}
+        {School}{City}
+        {Start}{End}
+        \vspace{-.3mm}
+        \item[]\hspace{-.75em}Major
+        % GPA HERE
+		% GPA HERE
+		% GPA HERE
+
+    %    \hfill GPA: 3.3
+
+		\item[]\hspace{-.3mm}\textbf{Relevant Coursework: }List courses here
+
+
+        \end{entryflush}
+
+        % QUEST Honors Program
+        \begin{entryflush}
+       {Honors Program}{Additional Segment}
+       {Start}{End}
+       \vspace{-.3mm}
+       \item[]\hspace{-.3mm}\textbf{Project:} Text
+       \item[]\hspace{-.3mm}\textbf{Project:} Text
+
+
+       \end{entryflush}
+
+
+\newcommand{\experiencevspace}{\vspace{1mm}}
+\createsection{Experience}
+
+\begin{entry}
+{Company}{Position}{Start}{End}
+\item bullet point one
+\item bullet point two
+\end{entry}
+\experiencevspace
+
+\begin{entry}
+{Company}{Position}{Start}{End}
+\item bullet point one
+\item bullet point two
+\end{entry}
+\experiencevspace
+
+\begin{entry}
+{Company}{Position}{Start}{End}
+\item bullet point one
+\item bullet point two
+\end{entry}
+\experiencevspace
+
+
+\begin{entry}
+{Company}{Position}{Start}{End}
+\item bullet point one
+\item bullet point two
+\end{entry}
+\experiencevspace
+
+
+\createsection{Computer and Programming Skills}
+
+\begin{entrynobullets}
+{Programming}{Languages}
+\end{entrynobullets}
+
+\begin{entrynobullets}
+{Operating Systems}{OS}
+\end{entrynobullets}
+
+\begin{entrynobullets}
+{Tools}{tools}
+\end{entrynobullets}
+
+\experiencevspace
+\createsection{Personal Projects}
+
+\begin{entry}
+{\href{https://github.com/project-link}{\color{black}{Name}}}{}{Start - End}{}
+\item description
+\end{entry}
+
+\begin{entry}
+{\href{https://github.com/project-link}{\color{black}{Name}}}{}{Start- End}{}
+\item description
+\end{entry}
+
+
+
+\begin{entry}
+{\href{https://github.com/project-link}{\color{black}{Name}}}{}{Start - End}{}
+\item description
+\end{entry}
+
+\begin{entry}
+{\href{https://github.com/project-link}{\color{black}{Name}}}{}{Start - End}{}
+\item description
+\end{entry}
+
+
+\newcommand{\experiencevspace}{\vspace{1mm}}
+\createsection{Activities}
+
+\begin{entry}
+{Organization}{Position}{Start}{End}
+\item bullet point
+\end{entry}
+\experiencevspace
+
+\begin{entry}
+{Organization}{Position}{Start}{End}
+\item bullet point
+\end{entry}
+\experiencevspace
+
+\begin{entry}
+{Organization}{Position}{Start}{End}
+\item bullet point
+\end{entry}
+\experiencevspace
+
+\begin{entry}
+{Organization}{Position}{Start}{End}
+\item bullet point
+\end{entry}
+\experiencevspace
+
+
+\end{document}
